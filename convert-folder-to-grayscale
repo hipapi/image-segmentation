@@ -1,0 +1,21 @@
+import cv2
+import numpy as np
+from oct2py import octave
+import oct2py
+import glob
+import os
+print glob.glob("/home/sani/Documents/icdar2015/icdar/*.*")
+oc = oct2py.Oct2Py()
+
+
+
+for name in glob.glob('/home/sani/Documents/icdar2015/icdar/*'):
+    str =  ("/home/sani/Documents/icdar2015/icdar/"+name)
+    #img = cv2.imread(name,0)
+    print(name)
+    os.path.basename(name)
+    #print(os.path.basename(name))
+    file = os.path.splitext(os.path.basename(name))[0] + ".png"
+    str = ""
+    str = "/home/sani/Documents/icdar2015/icdar-grey/"+file
+    cv2.imwrite(str,cv2.imread(name,0))
